@@ -1,0 +1,13 @@
+{
+  "name": "Chipre en coche",
+  "short_name": "Chipre",
+  "lang": "es",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f6f1e7",
+  "theme_color": "#ffffff",
+  "icons": [
+    { "src": "icono-180.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "icono-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

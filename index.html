@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es" translate="no">
+<head>
+<meta charset="utf-8">
+<meta name="google" content="notranslate">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Chipre">
+<meta name="theme-color" content="#ffffff">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icono-180.png">
+<link rel="icon" href="icono-180.png">
+<title>Chipre en coche</title>
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #ffffff; touch-action: none; }
+  /* La muesca y la barra de inicio del iPhone no tapan la app */
+  body { box-sizing: border-box; padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); }
+  #app { display: block; width: 100%; height: 100%; outline: none; }
+  #cargando { position: absolute; inset: 0; display: grid; place-items: center; margin: 0;
+              font: 16px system-ui, -apple-system, sans-serif; color: #5e636b; background: #f6f1e7; }
+</style>
+</head>
+<body>
+<canvas id="app"></canvas>
+<p id="cargando">Cargando la ruta por Chipre…</p>
+<script type="module">
+  import init from "./pkg/chipre.js";
+  init().then(() => document.getElementById("cargando").remove())
+        .catch(e => { document.getElementById("cargando").textContent = "No se pudo cargar: " + e; });
+</script>
+</body>
+</html>
